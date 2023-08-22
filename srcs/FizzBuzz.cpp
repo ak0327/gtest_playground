@@ -1,5 +1,3 @@
-#include "gtest/gtest.h"
-
 #include <sstream>
 #include "FizzBuzz.hpp"
 
@@ -20,10 +18,4 @@ std::string FizzBuzz::ans(int n) {
 		ss << n;
 	}
 	return ss.str();
-}
-
-TEST(FizzBuzzTest, Test1) {
-	FizzBuzz fizzBuzz;
-
-	EXPECT_EQ("1", fizzBuzz.ans(1));
 }

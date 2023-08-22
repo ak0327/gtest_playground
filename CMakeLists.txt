@@ -17,27 +17,15 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 add_executable(
-        ${PROJECT_NAME}-googletest
-#        srcs/main.cpp
+        fizzbuzz_test
+        srcs/test_fizzbuzz.cpp
         srcs/FizzBuzz.cpp
         srcs/FizzBuzz.hpp)
 
 target_link_libraries(
-        ${PROJECT_NAME}-googletest
+        fizzbuzz_test
         GTest::gtest_main
 )
 
-#target_include_directories(
-#        ${PROJECT_NAME}-googletest
-#        PUBLIC
-#        ${CMAKE_CURRENT_SOURCE_DIR}/srcs)
-
-#include(GoogleTest)
-#gtest_discover_tests(fizzbuzz_test)
-#add_test(NAME example_test COMMAND example)
-#target_link_libraries(fizzbuzz_test gtest_main)
-#add_test(NAME fizzbuzz_test COMMAND example)
-#enable_testing()
-
-add_test(NAME test COMMAND ${PROJECT_NAME}-googletest)
+add_test(NAME test COMMAND fizzbuzz_test)
 enable_testing()
