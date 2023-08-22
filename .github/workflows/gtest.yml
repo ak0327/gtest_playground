@@ -1,0 +1,14 @@
+name: GOOGLE_TEST
+on: [push]
+jobs:
+  run-google-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: build
+        run: |
+          cmake -S . -B build
+          cmake --build build
+      - name: run
+        run: cd build && ./fizzbuzz_test
