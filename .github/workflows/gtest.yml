@@ -11,4 +11,4 @@ jobs:
           cmake -S . -B build
           cmake --build build
       - name: run
-        run: cd build && ./fizzbuzz_test
+        run: cd build && ctest
