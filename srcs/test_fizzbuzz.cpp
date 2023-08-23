@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "FizzBuzz.hpp"
 
-TEST(fizz_buzz_test, test_positive_num) {
+TEST(FizzBuzzTest, TestPositiveNum) {
 	FizzBuzz fizzBuzz;
 
 	EXPECT_EQ("1", fizzBuzz.ans(1));
@@ -13,7 +13,7 @@ TEST(fizz_buzz_test, test_positive_num) {
 	EXPECT_EQ("91", fizzBuzz.ans(91));
 }
 
-TEST(fizz_buzz_test, test_negative_num) {
+TEST(FizzBuzzTest, TestNegativeNum) {
 	FizzBuzz fizzBuzz;
 
 	EXPECT_EQ("-1", fizzBuzz.ans(-1));
@@ -22,8 +22,7 @@ TEST(fizz_buzz_test, test_negative_num) {
 }
 
 /*
- cd build
- cmake ..
- make all
- ./fizzbuzz_test
+ cmake -S . -B build
+ cmake --build build
+ cd build && ctest
  */

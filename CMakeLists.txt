@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # google test ------------------------------------------------------------------
 
 include(FetchContent)
+include(GoogleTest)
+
 FetchContent_Declare(
         googletest
         DOWNLOAD_EXTRACT_TIMESTAMP true
@@ -15,17 +17,20 @@ FetchContent_Declare(
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
+enable_testing()
 
+# srcs -------------------------------------------------------------------------
 add_executable(
-        fizzbuzz_test
+        gtest_sample
         srcs/test_fizzbuzz.cpp
         srcs/FizzBuzz.cpp
-        srcs/FizzBuzz.hpp)
+        srcs/FizzBuzz.hpp
+        srcs/test_hello.cpp)
 
 target_link_libraries(
-        fizzbuzz_test
+        gtest_sample
         GTest::gtest_main
 )
 
-add_test(NAME test COMMAND fizzbuzz_test)
-enable_testing()
+# test -------------------------------------------------------------------------
+gtest_discover_tests(gtest_sample)
