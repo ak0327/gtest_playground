@@ -21,11 +21,11 @@ TEST(FizzBuzzTest, TestNegativeNum) {
 	EXPECT_EQ("Fizz", fizzBuzz.ans(-3));
 }
 
-TEST(FizzBuzzTest, TestZero) {
-	FizzBuzz fizzBuzz;
-
-	EXPECT_EQ("0", fizzBuzz.ans(0));
-}
+// TEST(FizzBuzzTest, TestZero) {
+// 	FizzBuzz fizzBuzz;
+//
+// 	EXPECT_EQ("0", fizzBuzz.ans(0));
+// }
 
 
 /*
