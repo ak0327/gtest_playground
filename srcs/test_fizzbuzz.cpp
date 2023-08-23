@@ -21,8 +21,18 @@ TEST(FizzBuzzTest, TestNegativeNum) {
 	EXPECT_EQ("Fizz", fizzBuzz.ans(-3));
 }
 
+TEST(FizzBuzzTest, TestZero) {
+	FizzBuzz fizzBuzz;
+
+	EXPECT_EQ("0", fizzBuzz.ans(0));
+}
+
+
 /*
  cmake -S . -B build
  cmake --build build
  cd build && ctest
+
+ cmake --build .
+ ctest
  */
